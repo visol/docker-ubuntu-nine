@@ -332,18 +332,6 @@ RUN mkdir -p /home/www-data/default/releases/current/web \
 	&& mkdir -p /home/www-data/logs/ \
 	&& chown -R www-data:www-data /home/www-data
 
-#
-# Development
-#
-
-RUN apt-get update \
-	&& apt-get install -y \
-		redis-tools \
-	&& rm -r /var/lib/apt/lists/*
-
-RUN wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --filename=composer --install-dir=/usr/bin --quiet \
-	&& composer global require hirak/prestissimo
-
 WORKDIR /home/www-data/default/releases/current
 
 EXPOSE 80 22
