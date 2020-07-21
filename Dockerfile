@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Jonas Renggli <jonas.renggli@visol.ch>
 
 ARG DEBIAN_FRONTEND=noninteractive
